@@ -1,10 +1,12 @@
+using Exo.WebApi.Contexts;
+using Exo.WebApi.Repositories;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
 builder.Services.AddTransient<ProjetoRepository, ProjetoRepository>();
-builder.Services.AddScoped<ExoApiContext, ExoApiContext>();
+builder.Services.AddScoped<ExoContext, ExoContext>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
